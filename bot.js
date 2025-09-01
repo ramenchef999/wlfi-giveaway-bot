@@ -6,6 +6,8 @@ const path = require('path');
 const token = '8353170585:AAEReZBd8UslP_aTV9K7Au4VEPTQSu2FC9s';
 const bot = new TelegramBot(token, { polling: true });
 
+
+
 // Mini App URL (update this with your deployed URL)
 const MINI_APP_URL = 'https://ramenchef999.github.io/wlfi-giveaway-bot'; // GitHub Pages URL
 

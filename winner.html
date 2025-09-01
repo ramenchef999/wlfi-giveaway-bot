@@ -219,7 +219,7 @@
         <div class="trophy">🏆</div>
         <h1 class="winner-title">🎉 CHÚC MỪNG!</h1>
         <p class="winner-subtitle">Bạn đã trúng giải</p>
-        <div class="prize-amount">1,000</div>
+        <div class="prize-amount" id="wlfiAmount">0</div>
         <div class="token-name">$WLFI Tokens</div>
         
         <button class="claim-button" onclick="claimTokens()">
@@ -271,14 +271,17 @@
 
             // Simulate processing
             setTimeout(() => {
+                // Get actual WLFI amount
+                const actualAmount = sessionStorage.getItem('wlfiAmount') || wlfiAmount;
+                
                 // Show success message
-                tg.showAlert('🎉 Tokens đã được gửi đến ví của bạn!\n\nChúc mừng bạn đã trúng 1,000 $WLFI!');
+                tg.showAlert(`🎉 Tokens đã được gửi đến ví của bạn!\n\nChúc mừng bạn đã trúng ${actualAmount} $WLFI!`);
                 
                 // Send data to bot
                 if (tg.sendData) {
                     tg.sendData(JSON.stringify({
                         action: 'tokens_claimed',
-                        amount: 1000,
+                        amount: parseInt(actualAmount),
                         timestamp: new Date().toISOString()
                     }));
                 }
@@ -292,6 +295,10 @@
                 }, 3000);
             }, 2000);
         }
+
+        // Get WLFI amount from sessionStorage
+        const wlfiAmount = sessionStorage.getItem('wlfiAmount') || Math.floor(Math.random() * (60 - 5 + 1)) + 5;
+        document.getElementById('wlfiAmount').textContent = wlfiAmount.toLocaleString();
 
         // Initialize effects
         createConfetti();

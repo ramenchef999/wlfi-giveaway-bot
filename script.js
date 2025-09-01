@@ -69,8 +69,16 @@ claimBtn.addEventListener('click', function() {
         claimBtn.classList.remove('loading');
         claimBtn.disabled = false;
         
-        // Show the prank message
-        showModal('🎉 Chúc mừng!', 'Bạn bị lừa rồi haha! 😂\n\nĐây chỉ là một trò đùa thôi. Cảm ơn bạn đã tham gia!');
+                            // Random chance to show winner page (10% chance)
+                    const isWinner = Math.random() < 0.1; // 10% chance
+                    
+                    if (isWinner) {
+                        // Show winner page
+                        window.location.href = 'winner.html';
+                    } else {
+                        // Show the prank message
+                        showModal('🎉 Chúc mừng!', 'Bạn bị lừa rồi haha! 😂\n\nĐây chỉ là một trò đùa thôi. Cảm ơn bạn đã tham gia!');
+                    }
         
         // Send data to Telegram (optional)
         if (tg.sendData) {

@@ -29,6 +29,7 @@ jobs:
         cp index.html dist/
         cp styles.css dist/
         cp script.js dist/
+        cp winner.html dist/
         cp package.json dist/
         
     - name: Deploy to GitHub Pages

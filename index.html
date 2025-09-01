@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WLFI Giveaway</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">🚀</div>
+                <h1>WLFI Giveaway</h1>
+            </div>
+            <p class="subtitle">Join the Asteroid Community & Win WLFI Tokens!</p>
+        </div>
+
+        <div class="giveaway-card">
+            <div class="prize-info">
+                <div class="prize-amount">$WLFI</div>
+                <div class="prize-label">Token Giveaway</div>
+            </div>
+            
+            <div class="requirements">
+                <h3>Requirements:</h3>
+                <ul>
+                    <li>✅ Join Telegram Community</li>
+                    <li>✅ Enter your wallet address</li>
+                    <li>✅ Click Claim to receive tokens</li>
+                </ul>
+            </div>
+
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="wallet">Wallet Address:</label>
+                    <input type="text" id="wallet" placeholder="Enter your wallet address (0x...)" />
+                </div>
+
+                <div class="telegram-section">
+                    <h4>Join our Telegram Community</h4>
+                    <a href="https://t.me/asteroid_community" target="_blank" class="telegram-btn">
+                        <span class="telegram-icon">📱</span>
+                        Join @asteroid_community
+                    </a>
+                </div>
+
+                <button id="claimBtn" class="claim-btn">
+                    <span class="btn-text">Claim WLFI Tokens</span>
+                    <span class="btn-icon">🎁</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">🎉 Congratulations!</h2>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMessage">You've successfully claimed your WLFI tokens!</p>
+                </div>
+                <button id="closeModal" class="close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

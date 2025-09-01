@@ -1,0 +1,25 @@
+runtime: nodejs18
+service: wlfi-giveaway
+
+env_variables:
+  BOT_TOKEN: "8353170585:AAEReZBd8UslP_aTV9K7Au4VEPTQSu2FC9s"
+  NODE_ENV: "production"
+
+handlers:
+  - url: /static
+    static_dir: .
+    secure: always
+
+  - url: /.*
+    script: auto
+    secure: always
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 10
+
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10

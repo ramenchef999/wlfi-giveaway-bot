@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: wlfi-giveaway
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BOT_TOKEN
+        value: "8353170585:AAEReZBd8UslP_aTV9K7Au4VEPTQSu2FC9s"
+    healthCheckPath: /health
